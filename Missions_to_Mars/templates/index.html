@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class='font-weight-bold'>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
+    </div>
+
+    <div class='container'>
+        <h2><strong><u>Latest Mars News</strong></u></h2>
+        <h5><strong>{{mars_data.news_title}}</strong></h5>
+        <p class='text-muted mb-4'>{{mars_data.news_headline}}</p>
+        <h3><strong>Featured Mars Image</h3></strong>
+        <div class='row mt-1'>
+            <div class='col-md-8'>
+                <img src="{{ mars_data.featured_image }}" style='width:auto; height:600px;' alt='Mars Image'>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class='card-title'>Current Weather on Mars</h5>
+                        <p class='card-text'>{{mars_data.mars_weather}}</p>
+                    </div>
+                </div>
+                <div>
+                    {{mars_data.mars_table|safe}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='container mt-3'>
+        <h2 class='text-center'>Mars Hemispheres</h2>
+        <hr>
+        <div class='card-deck mx-5'>
+            <div class='card'>
+                <img src="{{mars_data['mars_hemisphere_images'][0]['url']}}" class='card-img-top'>
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{mars_data['mars_hemisphere_images'][0]['title']}}</h5>
+                </div>
+            </div>
+            <div class='card'>
+                <img src="{{mars_data['mars_hemisphere_images'][1]['url']}}" class='card-img-top'>
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{mars_data['mars_hemisphere_images'][1]['title']}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class='card-deck mx-5'>
+            <div class='card'>
+                <img src="{{mars_data['mars_hemisphere_images'][2]['url']}}" class='card-img-top'>
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{mars_data['mars_hemisphere_images'][2]['title']}}</h5>
+                </div>
+            </div>
+            <div class='card'>
+                <img src="{{mars_data['mars_hemisphere_images'][3]['url']}}" class='card-img-top'>
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{mars_data['mars_hemisphere_images'][3]['title']}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
